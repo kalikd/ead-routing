@@ -1,14 +1,12 @@
-import { createSearchParams, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom"
+import list from "../data"
 
-function Product() {
+export default function Product() {
+    const { id } = useParams()
     const navigate = useNavigate()
-    function goHome() {
-        navigate('/')
-    }
-
-    return (<>
-        <h1>Product</h1>
-        <button onClick={goHome}>Go to Home</button>
-    </>)
+    return <>
+        <h1>Product Details-{id}</h1>
+        <button onClick={() => navigate('/')}>Go Home</button>
+        {list.filter(itm => itm.id == id).map(itm => <h3>{itm.name}</h3>)}
+    </>
 }
-export default Product;

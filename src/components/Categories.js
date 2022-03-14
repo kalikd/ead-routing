@@ -1,11 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-function Categories() {
-    return (<>
-        <h1>Categories</h1>
-        <Link to={'books'}>Books</Link>
-        <Link to={'pens'}>Pens</Link>
-        <Outlet />
-    </>)
+export default function Categories() {
+    return <>
+
+        <h1>Cateogries</h1>
+
+        <ul>
+            <li><NavLink to='kids' >Kids</NavLink></li>
+            <li><NavLink to='electronics' >Electronics</NavLink></li>
+        </ul>
+        <div> <Outlet /></div>
+
+    </>
 }
-export default Categories;

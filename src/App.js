@@ -7,18 +7,17 @@ import 'antd/dist/antd.css';
 import ApnaComponent from './Apna';
 import { Button, List, Avatar } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import Header from './Header';
-import Signup from './components/Signup';
-import Home from './components/Home';
-import About from './components/About';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
-import Notfound from './components/Notfound';
-import Categories from './components/Categories';
-import Books from './components/Books';
-import Pens from './components/Pens';
-import Product from './components/Product';
+import About from './components/About';
+import Blog from './components/Blog';
+import Home from './components/Home';
+import Notfound from './components/Notfound'
+import Categories from './components/Categories'
+import Kids from './components/Kids'
+import Electronics from './components/Electronics'
 import Products from './components/Products';
+import Product from './components/Product';
 function ComponentA() {
   return (<><h1>Component A</h1></>)
 }
@@ -137,18 +136,19 @@ class App extends Component {
 
     return (
       <>
+        <h1>Meri Company</h1>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='about' element={<About />} />
-
-          <Route path='products' element={<Products />} />
-          <Route path='product' element={<Product />} />
-
-          <Routes path='categories' element={<Categories />}>
-            <Route path='books' element={<Books />} />
-            <Route path='pens' element={<Pens />} />
-          </Routes>
+          <Route path={'/about'} element={<About />} />
+          <Route path={'/blog'} element={<Blog />} />
+          <Route path={'/products'} element={<Products />} />
+          <Route path={'/product/:id'} element={<Product />} />
+          <Route path={'/categories'} element={<Categories />}>
+            <Route index element={<Kids />} />
+            <Route path={'kids'} element={<Kids />} />
+            <Route path={'electronics'} element={<Electronics />} />
+          </Route>
           <Route path='*' element={<Notfound />} />
         </Routes>
       </>

@@ -36,7 +36,7 @@ ul > li{
 }
 
 .active{
-  color:hotpink
+  color:green
 }
 
 .active:hover{

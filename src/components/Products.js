@@ -1,27 +1,19 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { createSearchParams, Link, useSearchParams } from "react-router-dom";
+import list from "../data";
 
-function Products() {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
+export default function Products() {
+    const [searchParams, setSearchParams] = useSearchParams()
+    const newParams = createSearchParams()
+    newParams.set('color', 'red')
+    newParams.set('price', 200)
+    return <>
+        <h1>Products-{searchParams.get('color')}</h1>
+        <button onClick={() => setSearchParams({ price: '123' })}>Sasti Products</button>
+        <button onClick={() => setSearchParams({ color: 'redish' })}>Redish Products</button>
+        <ul>
+            {list.map(itm => <li><Link to={`/product/${itm.id}`}>{itm.name}</Link></li>)}
+        </ul>
 
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(res => {
-                setProducts(res)
+    </>
 
-            })
-
-    }, [])
-    const result = products.
-        map(itm => <Link to={'/product/' + itm.id}>{itm.title}</Link>)
-    return (<>
-        <h1>Products</h1>
-        <div>
-            {result && result}
-
-        </div>
-
-    </>)
 }
-export default Products;

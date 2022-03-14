@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+
 // function tick() {
 //   const element = <><h1>Hello Class!</h1><h3>{new Date().toLocaleTimeString()}</h3></>
 //   ReactDOM.render(element, document.getElementById('root'));
