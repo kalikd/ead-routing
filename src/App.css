@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+ul > li{
+  text-decoration: none;
+  display: inline-block;
+  list-style-type: none;
+  margin:10px
+}
+
+.active{
+  color:hotpink
+}
+
+.active:hover{
+  color:hotpink
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
