@@ -140,16 +140,15 @@ class App extends Component {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='about' element={<About />} />
 
-          <Route path='/product/:prodId' element={<Product />} />
-          <Route path='/categories' element={<Categories />} >
-            <Route index element={<Books />} />
+          <Route path='products' element={<Products />} />
+          <Route path='product' element={<Product />} />
+
+          <Routes path='categories' element={<Categories />}>
             <Route path='books' element={<Books />} />
             <Route path='pens' element={<Pens />} />
-          </Route>
+          </Routes>
           <Route path='*' element={<Notfound />} />
         </Routes>
       </>
