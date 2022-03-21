@@ -14,7 +14,10 @@ function Product() {
 
     return (<>
         <h1>Product-{prodId}</h1>
-        <button onClick={() => setSearchParams({ price: 'sss' })}>Expensive</button>
+        {/* <button onClick={() => { searchParams.set('size', 'XL'); setSearchParams(searchParams) }}>XL</button>
+        <button onClick={() => { searchParams.set('color', 'red'); setSearchParams(searchParams) }}>Redish</button> */}
+        <button onClick={() => { params.append('size', 'xl'); setSearchParams(params) }}>XL</button>
+        <button onClick={() => { params.append('color', 'red'); setSearchParams(params) }}>Redish</button>
         <h1>{searchParams && searchParams.get('price')}</h1>
         <button onClick={() => setSearchParams({})}>Reset</button>
     </>)

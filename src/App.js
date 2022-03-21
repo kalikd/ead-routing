@@ -19,6 +19,11 @@ import Books from './components/Books';
 import Pens from './components/Pens';
 import Product from './components/Product';
 import Products from './components/Products';
+import Counters from './components/Counters';
+
+
+
+
 function ComponentA() {
   return (<><h1>Component A</h1></>)
 }
@@ -143,7 +148,7 @@ class App extends Component {
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/products' element={<Products />} />
-
+          <Route path='/counters' element={<Counters />} />
           <Route path='/product/:prodId' element={<Product />} />
           <Route path='/categories' element={<Categories />} >
             <Route index element={<Books />} />

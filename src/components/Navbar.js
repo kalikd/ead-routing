@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import NewComponent from "./CenteredComponentHOC";
+
 
 function Navbar() {
     return (<>
@@ -8,7 +10,8 @@ function Navbar() {
             <li><NavLink to='categories'>Categories</NavLink></li>
             <li><NavLink to='products'>Products</NavLink></li>
             <li><NavLink to='signup'>Signup</NavLink></li>
+            <li><NavLink to='counters'>Counters</NavLink></li>
         </ul>
     </>)
 }
-export default Navbar;
+export default NewComponent(Navbar);
